@@ -1,0 +1,20 @@
+-- CRIANDO E USANDO O BANCO DE DADOS PARA O EXERCÍCIO
+CREATE DATABASE db_exercicio_0804;
+USE db_exercicio_0804;
+
+-- CRIANDO A TABELA REFERENTE ÀS CIDADES
+CREATE TABLE tbl_cidades (
+	Id_Cidade INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(60) NOT NULL,
+    Populacao INT
+);
+
+-- CRIANDO A TABELA REFERENTE AOS ALUNOS
+CREATE TABLE tbl_alunos (
+	Id_Alunos INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(60) NOT NULL,
+    DataDeNascimento DATE,
+    Id_Cidade INT,
+    FOREIGN KEY fk_id_cidade (Id_Cidade)
+    REFERENCES tbl_cidades (Id_Cidade)
+);
